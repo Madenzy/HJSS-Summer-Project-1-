@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link to CSS file use flask-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="home-container">
+    <header class="hero-section">
+        <h1>Welcome to Hatfield Junior Swimming School (HJSS)</h1>
+        <p>Building confidence and skills in young swimmers, from beginners to advanced grades.</p>
+    </header>
+
+    <section class="grades-overview">
+        <h2>Our Programs</h2>
+        <p>HJSS offers swimming lessons for children aged 4 to 11. Learners are grouped by grade levels from 0 to 5:</p>
+        <ul>
+        <li><strong>Grade 0</strong>: New to swimming</li>
+        <li><strong>Grade 1-2</strong>: Beginner to basic swimmer</li>
+        <li><strong>Grade 3-4</strong>: Intermediate swimmer</li>
+        <li><strong>Grade 5</strong>: Advanced level</li>
+        </ul>
+        <p>Each lesson is 1 hour long with a maximum of 4 learners per session.</p>
+    </section>
+    
+    <section class="quick-navigation">
+        <h2>Explore Our Site</h2>
+        <nav>
+        <ul>
+            <li><a href="/timetable-grade">View Timetable by Grade</a></li>
+            <li><a href="/timetable-coach">View Timetable by Coach</a></li>
+            <li><a href="/register">Register for Classes</a></li>
+            <li><a href="/login">Login to Your Account</a></li>
+        </ul>
+        </nav>
+    </section>
+
+    <section class="announcements">
+        <h2>Announcements</h2>
+        <article class="announcement">
+        <h3>🏊 New Term Starts 2nd September!</h3>
+        <p>Register now to reserve your spot in our beginner and advanced classes!</p>
+        </article>
+        <article class="announcement">
+        <h3>🎉 Congratulations!</h3>
+        <p>Well done to our Grade 5 learners who passed their final swim test this week!</p>
+        </article>
+        
+    </section>
+    </div>
+    <footer>
+    
+        <p style="font-weight: 200;">Contact Us</p>
+        <p><strong>Email:</strong> info@hjsschool.co.uk</p>
+        <p><strong>Phone:</strong> 01234 567890</p>
+        <p><strong>Address:</strong> Hatfield Junior Swimming School, Water Lane, Hatfield, AL10 0AB</p>
+        <p>&copy; 2023 Hatfield Junior Swimming School. All rights reserved.</p>
+        
+    </footer>
+</body>
+</html>
