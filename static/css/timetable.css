@@ -1,0 +1,33 @@
+body{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #a95757;
+    text-align: center;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    background-color: #130612;
+    color: white;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 4px solid #8470e5;
+}
+img {
+    border-radius: 100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    justify-content: center;
+}
+button {
+    background-color: #8470e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}

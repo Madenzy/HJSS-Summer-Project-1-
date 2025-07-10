@@ -1,0 +1,144 @@
+/* Base reset and default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.mode-toggle input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Container */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Login box */
+.login-box {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Text styles */
+.login-box h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-box p {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #5a67d8;
+}
+
+.extra-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.extra-links a {
+  text-decoration: none;
+  color: #667eea;
+  transition: color 0.3s;
+}
+
+.extra-links a:hover {
+  color: #5a67d8;
+}
+
+/* --- DARK MODE --- */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  color: #e2e8f0;
+}
+
+body.dark-mode .login-box {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .login-box h2 {
+  color: #edf2f7;
+}
+
+body.dark-mode .login-box p {
+  color: #cbd5e0;
+}
+
+body.dark-mode .login-box input {
+  background-color: #4a5568;
+  color: #e2e8f0;
+  border: 1px solid #718096;
+}
+
+body.dark-mode .login-box input::placeholder {
+  color: #a0aec0;
+}
+
+body.dark-mode .extra-links a {
+  color: rgb(124, 182, 236);
+}
+
+body.dark-mode .extra-links a:hover {
+  color: #63b3ed;
+}

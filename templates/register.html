@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registerstyle.css') }}">
+</head>
+<body>
+    <div class="mode-toggle">
+        <label>
+            <input type="checkbox" id="darkModeToggle" />
+            <span>🌙 Dark Mode</span>
+        </label>
+    </div>
+    <h1>Registration Form</h1>
+
+    <form method="POST" action="#">
+        <label for="fullname">Learner's Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" required>
+
+        <label>Gender:</label>
+        <div class="gender-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+        </div>
+
+        <label for="emergency_contact">Emergency Contact Phone Number:</label>
+        <input type="text" id="emergency_contact" name="emergency_contact" required>
+
+        <label for="grade_level">Current Grade Level:</label>
+        <select id="grade_level" name="grade_level" required>
+            <option value="">Select Grade</option>
+            <option value="0">Grade 0</option>
+            <option value="1">Grade 1</option>
+            <option value="2">Grade 2</option>
+            <option value="3">Grade 3</option>
+            <option value="4">Grade 4</option>
+            <option value="5">Grade 5</option>
+        </select>
+
+        <label for="medical_notes">Medical Conditions / Notes:</label>
+        <textarea id="medical_notes" name="medical_notes" rows="4"></textarea>
+
+        <label for="username">Username / Email:</label>
+        <input type="email" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Register">
+</form>
+</body>
+</html>

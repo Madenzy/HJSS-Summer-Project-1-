@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weekly Timetable - HJSS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timetable.css') }}">
 </head>
 <body>
-    
+    <header class="profile-header">
+        <form method="POST" enctype="multipart/form-data">
+            <label for="fileInput" class="upload-label">
+                <img src="/static/images/user.png" alt="User Icon" />
+            </label>
+            <input type="file" id="fileInput" name="photos" multiple accept="image/*" style="display: none;">
+            <button type="submit">Upload</button>
+        </form>
+        <h1>{{ username }}</h1>
+    </header>
+
+    <h1>Weekly Lesson Timetable</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Time Slot</th>
+                <th>Grade</th>
+                <th>Coach</th>
+                <th>Max Learners</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>4–5 PM</td>
+                <td>1</td>
+                <td>Coach Alice</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>5–6 PM</td>
+                <td>2</td>
+                <td>Coach Bob</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>6–7 PM</td>
+                <td>3</td>
+                <td>Coach Alice</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>2–3 PM</td>
+                <td>5</td>
+                <td>Coach Charlie</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Uploaded Images</h2>
+    <div class="gallery">
+        {% for image in images %}
+            <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="{{ image }}">
+        {% endfor %}
+    </div>
 </body>
 </html>
