@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mee.css') }}">
+</head>
+<body>
+    <h1>Welcome to Mee</h1>
+    <h1>Dashboard</h1>
+    {% if students | length < 1 %}
+
+        <p>No students found</p>
+    {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Emergency Contact</th>
+                    <th>Grade Level</th>
+                    <th>Medical Notes</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.fullname }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.gender }}</td>
+                        <td>{{ student.emergency_contact }}</td>
+                        <td>{{ student.grade_level }}</td>
+                        <td>{{ student.medical_notes }}</td>
+                        <td>{{ student.username }}</td>
+                        <td>{{ student.password }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>

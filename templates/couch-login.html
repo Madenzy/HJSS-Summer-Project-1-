@@ -12,16 +12,14 @@
       <input type="checkbox" id="darkModeToggle" />
       <span>Dark Mode</span>
     </label>
-  </div>a
+  </div>
 
   <div class="login-container">
     <div class="login-box">
-      <h2>{{title}}</h2>
-      <p>Please login to continue</p>
-
-      <form action="{{ url_for('login') }}" method="POST">
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <input type="password" id="password" name="password" placeholder="Password" required>
+      <h2>Coach Login</h2>
+      <form method="POST" action="{{ url_for('coach_login') }}">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
       </form>
 

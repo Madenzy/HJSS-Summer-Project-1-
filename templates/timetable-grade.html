@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/timetable-gradestyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <header>
+        <section class="quick-navigation">
+        <nav>
+        <ul>
+            <li id="button"><a href="/templates/index">Home</a></li>
+            <li id="button"><a href="/timetable-coach">Coach Timetable</a></li>
+            <li id="button" ><a href="/register">Register</a></li>
+            <li id="button"> <a href="/loginchoice">Login</a></li>
+        </ul>
+        </nav>
+    </section>
+    </header>
     <h1>Timetable by Grade Level</h1>
 
     <h2>Grade 0 (New Swimmers)</h2>

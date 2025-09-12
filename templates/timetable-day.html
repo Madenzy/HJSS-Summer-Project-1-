@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/timetable-daystyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <header>
+        <section class="quick-navigation">
+        <nav>
+        <ul>
+            <li id="button"><a href="/templates/index">Home</a></li>
+            <li id="button"><a href="/timetable-grade">Grade Timetable</a></li>
+            <li id="button"><a href="/timetable-coach">Coach Timetable</a></li>
+            <li id="button" ><a href="/register">Register</a></li>
+            <li id="button"> <a href="/loginchoice">Login</a></li>
+        </ul>
+        </nav>
+    </section>
+    </header>
     <h1>Timetable by Day</h1>
 
     <h2>Monday</h2>

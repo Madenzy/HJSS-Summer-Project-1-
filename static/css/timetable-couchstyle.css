@@ -1,0 +1,65 @@
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+}
+
+/* Timetable Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+thead {
+  background: #2563eb;
+  color: #fff;
+}
+
+thead th {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+tbody td {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Row styles */
+tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tbody tr:hover {
+  background: #e0f2fe;
+  transition: 0.2s ease-in-out;
+}
+
+/* First column (Coach name) highlight */
+tbody td:first-child {
+  font-weight: bold;
+  color: #1e40af;
+}

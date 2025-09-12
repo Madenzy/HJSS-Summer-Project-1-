@@ -4,60 +4,108 @@ body {
   padding: 0;
   background: #f5faff;
   color: #333;
+  text-align: center; /* center text by default */
 }
 
 .home-container {
   max-width: 960px;
-  margin: auto;
-  padding: 20px;
-}
+  margin: 0 auto;
+  padding: 0;
+  }
 
 .hero-section {
   background: #008cba;
   color: white;
-  padding: 20px;
+  padding: 40px 20px;
   border-radius: 8px;
+  position: relative;
+}#button {
+    color: white; 
+    border: 2px solid white; 
+    border-radius: 5px; 
+    padding: 0; 
+    cursor: pointer; 
+    text-decoration: none; 
+    display: inline-block; 
+    background-color: #000000;
 }
 
+
+
 h1, h2 {
-  color: #004d66;
+  color: #27bef0;
+  margin-top: 0;
+}
+
+.hero-section p {
+  margin-top: 10px;
+}
+
+.quick-navigation {
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
 .quick-navigation ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
 }
 
 .quick-navigation li {
-  margin: 5px 0;
+  margin: 0;
 }
 
 .quick-navigation a {
-  color: #0077aa;
+  color: #ffffff;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
 }
 
 .quick-navigation a:hover {
-  text-decoration: underline;
+  color: #ffdd57;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center sections horizontally */
+  gap: 30px;
+  margin: 0px;
+  padding: 0px;
+  background-image: url('../images/swims\ img.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.grades-overview,
 .announcements {
-  background: #e6f9ff;
-  padding: 15px;
+  background: #2f3132ae;
+  padding: 20px;
   border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
   margin-top: 20px;
 }
 
-.announcement {
-  margin-bottom: 15px;
+
+main ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  text-align: left; /* keep bullets aligned */
+  display: inline-block;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background: #004d66;
   color: white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  margin: 0px;
+  border-radius: 8px 8px 0 0;
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable by Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timetable-couchstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <section class="quick-navigation">
+        <nav>
+        <ul>
+            <li id="button"><a href="/templates/index">Home</a></li>
+            <li id="button"><a href="/timetable-grade">Grade Timetable</a></li>
+            <li id="button"><a href="/timetable-coach">Coach Timetable</a></li>
+            <li id="button" ><a href="/register">Register</a></li>
+            <li id="button"> <a href="/loginchoice">Login</a></li>
+        </ul>
+        </nav>
+    </section>
+    </header>
+    <h1>Timetable by Coach</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Coach</th>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>Monday</td>
+                <td>4–5 PM</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>Wednesday</td>
+                <td>5–6 PM</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Monday</td>
+                <td>5–6 PM</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Wednesday</td>
+                <td>4–5 PM</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Carol</td>
+                <td>Monday</td>
+                <td>6–7 PM</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Carol</td>
+                <td>Saturday</td>
+                <td>3–4 PM</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>Friday</td>
+                <td>6–7 PM</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Dave</td>
+                <td>Saturday</td>
+                <td>2–3 PM</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

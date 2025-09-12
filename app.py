@@ -1,79 +1,126 @@
 from flask import Flask, render_template, request, redirect, url_for
-import os
-from werkzeug.utils import secure_filename
+from flask_sqlalchemy import SQLAlchemy
+
+
+
+
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'static/uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# Database config
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.db'
+db = SQLAlchemy(app)
 
-# Ensure upload folder exists
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-@app.route('/timetable', methods=['GET', 'POST'])
-def upload_file():
-    if request.method == 'POST':
-        files = request.files.getlist('photos')
-        for file in files:
-            if file.filename != '':
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('upload_file'))
+# -------------------------------
+# Database Model
+# -------------------------------
+class Student(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fullname = db.Column(db.String(100), unique=True, nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    gender = db.Column(db.String(10), nullable=False)
+    emergency_contact = db.Column(db.String(15), unique=True, nullable=False)
+    grade_level = db.Column(db.String(10), nullable=False)
+    medical_notes = db.Column(db.Text, nullable=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
 
-    # List uploaded images
-    images = os.listdir(UPLOAD_FOLDER)
-    return render_template('timetable.html', images=images)
 
+with app.app_context():
+    db.create_all()
+
+
+# -------------------------------
+# Routes
+# -------------------------------
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/loginchoice', methods=['GET', 'POST'])
 def login_choice():
-    if request.method == 'POST':
-        user_type = request.form.get('user_type')
-        return redirect(url_for('login', user_type=user_type))
     return render_template('loginchoice.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    user_type = request.args.get('user_type', 'user')  # default to 'user'
-    if user_type == 'student':
-        title = "Student Login"
-    elif user_type == 'coach':
-        title = "Coach Login"
-    else:
-        title = "User Login"
+    title = "Student Login"
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+        # TODO: verify student login here
         return render_template('timetable.html', username=username)
     return render_template('login.html', title=title)
 
-@app.route('/register')
-def register():
-    return render_template('register.html')
-'''
-@app.route('/timetable', methods=['GET', 'POST'])
-def timetable():
+
+@app.route('/coach-login', methods=['GET', 'POST'])
+def coach_login():
+    title = "Coach Login"
     if request.method == 'POST':
-        files = request.files.getlist('photos')
-        for file in files:
-            if file.filename != '':
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('timetable'))
+        username = request.form.get('username')
+        password = request.form.get('password')
+        return render_template('couch-timetable.html', username=username)
+    return render_template('couch-login.html', title=title)
 
-    images = os.listdir(app.config['UPLOAD_FOLDER'])
-    return render_template('timetable.html', images=images)'''
 
-@app.route('/timetable-couch')
-def time_table_couch():
-    return render_template('timetable-couch.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        fullname = request.form.get('fullname')
+        age = request.form.get('age')
+        gender = request.form.get('gender')
+        emergency_contact = request.form.get('emergency_contact')
+        grade_level = request.form.get('grade_level')
+        medical_notes = request.form.get('medical_notes')
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        new_student = Student(
+            fullname=fullname,
+            age=age,
+            gender=gender,
+            emergency_contact=emergency_contact,
+            grade_level=grade_level,
+            medical_notes=medical_notes,
+            username=username,
+            password=password
+        )
+
+        try:
+            db.session.add(new_student)
+            db.session.commit()
+            return redirect(url_for('index'))
+        except Exception as e:
+            return f'An error occurred: {e}'
+
+    return render_template('register.html')
+
+
+@app.route('/timetable-coach')
+def time_table_coach():
+    return render_template('timetable-coach.html')
+
 
 @app.route('/timetable-grade')
 def time_table_grade():
     return render_template('timetable-grade.html')
 
+
+@app.route('/students')
+def get_students():
+    students = Student.query.all()
+    print("DEBUG:", students)  
+    return render_template('students.html', students=students)
+
+@app.route('/mee')
+def mee():
+    students = Student.query.all()
+    return render_template('mee.html', students=students)
+# -------------------------------
+# Run App
+# -------------------------------
 if __name__ == '__main__':
     app.run(debug=True)

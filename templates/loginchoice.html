@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginchoice.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Choice</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/loginchoice.css') }}">
 </head>
 <body>
-    <Header>
-        <h1>Please select your account type:</h1>
-        <div class="button-container">
-            <button><a href="{{ url_for('login', user_type='student') }}">Student</a></button>
-            <button><a href="{{ url_for('login', user_type='coach') }}">Coach</a></button>
-        </div>
-    </Header>
+  <header>
+    <h1>Please select your account type:</h1>
+    <div class="button-container">
+      <a href="{{ url_for('login') }}" class="btn">Student</a>
+      <a href="{{ url_for('coach_login') }}" class="btn">Coach</a>
+    </div>
+  </header>
 </body>
 </html>

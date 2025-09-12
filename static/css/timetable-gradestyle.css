@@ -1,0 +1,71 @@
+/* timetable-gradestyle.css */
+
+/* Base Reset + Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0066ff;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Page Title */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+}
+
+/* Grade Sections */
+h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+
+
+/* Timetable entries */
+p {
+  background: #fff;
+  margin: 0.4rem 0;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Rules section */
+h3 {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: #1e40af;
+}
+
+ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+ul li {
+  margin-bottom: 0.6rem;
+  background: #f9fafb;
+  padding: 0.6rem 1rem;
+  border-left: 5px solid #2563eb;
+  border-radius: 6px;
+}
